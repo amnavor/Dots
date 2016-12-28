@@ -1,29 +1,27 @@
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $interval) {
+$(document).ready(function() {
 
-  $scope.screen = 0;
-  $scope.challengeMode = "off";
+  var challengeMode = false;
   var points = 0;
   var playedList = [];
   var userTurn = false;
   var currentTargetIndex = 0;
   var start = false;
 
-  $scope.switchChalMode = function() {
-    if ($scope.challengeMode == "off") {
-      $scope.challengeMode = "on";
+  $("#chalButton").click(function()  {
+    if (challengeMode) {
+      $("#chalMode").html("off");
     } else {
-      $scope.challengeMode = "off";
+      $("#chalMode").html("on");
     }
-  };
+  });
 
-  $scope.reset = function() {
-    $scope.screen = 0;
-    var points = 0;
-    $scope.challengeMode = "off";
+  $("#reset").click(function()  {
+    points = 0;
+    chal = "off";
+    $("#chalMode").html("off");
     var playedList = [];
     userTurn=false;
-  };
+  });
 
   function add() {
     userTurn = false;
@@ -58,9 +56,9 @@ app.controller('myCtrl', function($scope, $interval) {
         currentTargetIndex += 1;
         points += 1;
         if (points == 20) {
-            $scope.screen = "win";
+        $("#screen").html("you win!");
         } else if (currentTargetIndex == playedList.length) {
-            $scope.screen = points;
+        $("#screen").html("next round");
           currentTargetIndex = 0;
            userTurn=false;
               setTimeout(function() {$("td").css("background-color", "grey");}, 1000);
@@ -69,7 +67,7 @@ app.controller('myCtrl', function($scope, $interval) {
       } else {
          $("#"+ num).css("background-color", "red");
        setTimeout(function() { $("#"+ num).css("background-color", "grey");}, 200);
-        if ($scope.challengeMode == "off") {
+        if (!challengeMode) {
           //replay
         } else {
           //restart
@@ -79,15 +77,16 @@ app.controller('myCtrl', function($scope, $interval) {
     }
   });
 
-$scope.play = function() {
-  if ($scope.challengeMode == false) {
-  if (start == false) {
+$("#play").click(function()  {
+  if (!challengeMode) {
+  if (!start) {
     add();
   } else {
     //repeat sequence
   } 
   } else {
     //highlight challenge mode
-  }};
+  }
+});
 
 });
