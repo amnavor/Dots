@@ -80,5 +80,4 @@ app.controller('myCtrl', function($scope, $interval) {
   $scope.play = function() {
     add();
   };
-
 });
