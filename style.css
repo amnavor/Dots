@@ -1,0 +1,49 @@
+#game {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+body {
+  font-size: 30px;
+  text-align: center;
+  background: url() fixed center no-repeat;
+  background-size: cover;
+}
+
+
+td {
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 50%; 
+  background: grey;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  border-spacing: 10px;
+}
+
+#chalMode {
+  font-size: 15px;
+  border: solid black 1px;
+  padding: 5px;
+  background: white;
+  color: black;
+}
+
+#screen {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 15px;
+  border: solid black 1px;
+  height: 40px;
+  width: 150px;
+  background: white;
+  color: black;
+}

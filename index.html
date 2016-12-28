@@ -1,0 +1,22 @@
+<div class="main" ng-app="myApp" ng-controller="myCtrl">
+
+  <body>
+    <div id="game">
+      <div id="screen"> {{screen}} </div>
+       <button ng-click='play()'> Play </button>
+      <button ng-click='reset()'> Reset </button> <br>
+      <button ng-click='switchChalMode()'> Challenge Mode: </button>
+      <p1 id="chalMode"> {{challengeMode}} </p1>
+      <table>
+        <tr>
+          <td id="1"></td>
+          <td id="2"></td>
+        </tr>
+        <tr>
+          <td id="3"></td>
+          <td id="4"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</div>
