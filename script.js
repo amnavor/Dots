@@ -3,24 +3,27 @@ app.controller('myCtrl', function($scope, $interval) {
 
   $scope.screen = 0;
   $scope.challengeMode = "off";
+  var points = 0;
   var playedList = [];
   var userTurn = false;
   var currentTargetIndex = 0;
+  var start = false;
 
-//   $scope.switchChalMode = function() {
-//     if ($scope.challengeMode == "off") {
-//       $scope.challengeMode = "on";
-//     } else {
-//       $scope.challengeMode = "off";
-//     }
-//   };
+  $scope.switchChalMode = function() {
+    if ($scope.challengeMode == "off") {
+      $scope.challengeMode = "on";
+    } else {
+      $scope.challengeMode = "off";
+    }
+  };
 
-//   $scope.reset = function() {
-//     $scope.screen = 0;
-//     $scope.challengeMode = "off";
-//     var playedList = [];
-//     usActive(false);
-//   };
+  $scope.reset = function() {
+    $scope.screen = 0;
+    var points = 0;
+    $scope.challengeMode = "off";
+    var playedList = [];
+    userTurn=false;
+  };
 
   function add() {
     userTurn = false;
@@ -33,7 +36,7 @@ app.controller('myCtrl', function($scope, $interval) {
       howManyTimes = playedList.length;
     var hit = playedList[i];
     function f() {
-      $("#"+hit).fadeOut(100).fadeIn(100);
+      $("#"+hit).fadeOut(150).fadeIn(150);
       i++;
       if (i < howManyTimes) {
         hit = playedList[i];
@@ -53,10 +56,11 @@ app.controller('myCtrl', function($scope, $interval) {
         $("#"+ num).css("background-color", "green");
         setTimeout(function() { $("#"+ num).css("background-color", "grey");}, 200);
         currentTargetIndex += 1;
-        if (currentTargetIndex > 20) {
+        points += 1;
+        if (points == 20) {
             $scope.screen = "win";
         } else if (currentTargetIndex == playedList.length) {
-            $scope.screen = "win";
+            $scope.screen = points;
           currentTargetIndex = 0;
            userTurn=false;
               setTimeout(function() {$("td").css("background-color", "grey");}, 1000);
@@ -67,17 +71,23 @@ app.controller('myCtrl', function($scope, $interval) {
        setTimeout(function() { $("#"+ num).css("background-color", "grey");}, 200);
         if ($scope.challengeMode == "off") {
           //replay
-          $scope.screen = "lose";
         } else {
           //restart
-           $scope.screen = "lose";
         }
       }
 
     }
   });
 
-  $scope.play = function() {
+$scope.play = function() {
+  if ($scope.challengeMode == false) {
+  if (start == false) {
     add();
-  };
+  } else {
+    //repeat sequence
+  } 
+  } else {
+    //highlight challenge mode
+  }};
+
 });
