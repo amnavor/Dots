@@ -12,6 +12,7 @@ body {
   background-size: cover;
 }
 
+
 td {
   height: 60px;
   width: 60px;
@@ -24,25 +25,33 @@ td {
 table {
   margin-left: auto;
   margin-right: auto;
-  padding: 30px;
   border-spacing: 10px;
 }
 
-#chalMode {
-  font-size: 15px;
-  border: solid black 1px;
-  padding: 5px;
-  background: white;
-  color: black;
+button {
+  height: 62px;
+  width: 62px;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 50%; 
+  background: grey;
+  margin: 1px;
+  border: none;
 }
 
 #screen {
   margin-right: auto;
   margin-left: auto;
-  font-size: 15px;
-  border: solid black 1px;
+  border: none;
   height: 40px;
-  width: 150px;
+  width: 400px;
   background: white;
   color: black;
+  padding-top: 20px;
+}
+
+img {
+  height: 40px;
+  width: 40px;
+  padding: 4px;
 }
