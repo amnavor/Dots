@@ -1,14 +1,17 @@
 #game {
-  height: 400px;
+  height: 300px;
   width: 400px;
-  margin: 0 auto;
-  padding-top: 25px;
+  padding-top: 75px;
+  margin: auto;
+  margin-top: 10%;
+  border: solid grey 10px;
+  border-radius: 5%;
 }
 
 body {
   font-size: 30px;
   text-align: center;
-  background: url() fixed center no-repeat;
+  background: url("https://cloud.githubusercontent.com/assets/12720744/21556733/227d92e4-cdd8-11e6-80cf-7f83d5167906.jpg") fixed center no-repeat;
   background-size: cover;
 }
 
@@ -26,32 +29,35 @@ table {
   margin-left: auto;
   margin-right: auto;
   border-spacing: 10px;
+  padding-top: 30px;
 }
 
 button {
-  height: 62px;
-  width: 62px;
-  text-align: center;
-  font-size: 40px;
-  border-radius: 50%; 
-  background: grey;
-  margin: 1px;
+ background: none;
   border: none;
 }
 
 #screen {
-  margin-right: auto;
   margin-left: auto;
-  border: none;
+  margin-right: auto;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold; 
+  font-family: 'Amatica SC';
+  color: grey;
+   background: none;
+  width: 300px;
   height: 40px;
-  width: 400px;
-  background: white;
-  color: black;
-  padding-top: 20px;
+  border-radius: 5%;
+  padding-top: 10px;
 }
 
 img {
-  height: 40px;
-  width: 40px;
-  padding: 4px;
+  height: 25px;
+  width: 25px;
+  padding: px;
+}
+
+button:focus {
+  outline:0;
 }
