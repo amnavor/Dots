@@ -2,7 +2,7 @@ Dottelganger
 -----
 
 A matching game. Copy the sequence of sounds and flashes presented to you. <br /> If you mess up, the sequence is repeated.
-Challenge mode: if you mess up, the game is over.  You can restart at any time. <br /> 
+Challenge mode: if you mess up, the game is over.  <br /> You can restart at any time. <br /> 
 
 [Try it out](http://codepen.io/amnavor/full/yVqMLp).
 
